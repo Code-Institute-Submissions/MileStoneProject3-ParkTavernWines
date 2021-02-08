@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Park Tavern Wines</title>
 </head>
 <body>
-    {% for wine_list in wine_list %}
-        {{wine_list.wine_name}}<br>
-        {{wine_list.wine_region}}<br>
+    {% for wines in wine_list %}
+        {{wines.wine_name}}<br>
+        {{wines.wine_region}}<br>
     {% endfor %}
 </body>
 </html>
