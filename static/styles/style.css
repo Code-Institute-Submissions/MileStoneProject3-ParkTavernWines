@@ -1,9 +1,7 @@
-/* Background Colors */
+/* Body Styling */
 
-header {
+body {
     background-color: #a7dcb2;
+    font-family: sans-serif;
 }
 
-.maintitle{
-    text-transform: uppercase;
-}

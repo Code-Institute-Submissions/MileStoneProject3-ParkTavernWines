@@ -3,7 +3,11 @@
 {% block content %}
 
     {% for wines in wine_list %}
-        <h1>{{wines.wine_name}}<br></h1>
-        {{wines.wine_category}}<br>
+        <ul>
+            <li>
+                <h1>{{wines.wine_name}}<br></h1>
+                {{wines.wine_category}}<br>
+            </li>
+        </ul>
     {% endfor %}
 {% endblock %}

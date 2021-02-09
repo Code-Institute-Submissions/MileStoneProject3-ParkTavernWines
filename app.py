@@ -29,6 +29,7 @@ def get_winelist():
 # Building NavBar with Flask
 nav = Nav(app)
 
+
 nav.register_element("navbar", Navbar(
     "thenav",
     View("Home Page", "index")))
