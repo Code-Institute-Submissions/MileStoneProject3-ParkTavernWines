@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-    {% for wines in wine_list %}
-        <ul>
-            <li>
-                <h1>{{wines.wine_name}}<br></h1>
-                {{wines.wine_category}}<br>
-            </li>
-        </ul>
+<section>
+    <div class="container">
+        {% for wines in wine_list %}
+           
+            <p>{{wines.wine_name}}<br></p>
+                
+</div>
+            </section>           
     {% endfor %}
 {% endblock %}
