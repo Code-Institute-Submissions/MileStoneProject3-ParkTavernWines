@@ -6,9 +6,10 @@
     <title>Park Tavern Wines</title>
 </head>
 <body>
+    <a href="base.html">base</a>
     {% for wines in wine_list %}
-        {{wines.wine_name}}<br>
-        {{wines.wine_region}}<br>
+        <h1>{{wines.wine_name}}<br></h1>
+        {{wines.wine_category}}<br>
     {% endfor %}
 </body>
 </html>
