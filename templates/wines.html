@@ -1,13 +1,26 @@
 {% extends "base.html" %}
 
-{% block content %}
-<section>
-    <div class="container">
-        {% for wines in wine_list %}
-           
-            <p>{{wines.wine_name}}<br></p>
-                
+    {% block content %}
+<!----------------Title of Project-->
+<div class="row no-gutters">
+    <div class=" d-flex justify-content-center col-12">
+        <h1>South African Wine List</h1>
+    </div>
 </div>
-            </section>           
+<div class="row no-gutters">
+    <div class="offset-2 col-8">
+        <p>Here at Park Tavern SW18 we have an extensive range of South African wines available. We pride
+            ourselves on chosing the best selection and variety of wines from the wonderful region of 
+            South Africa. Have a browse over what we serve and leave some reviews if ofcourse you have
+            tried the deliciousness of them, alternatively be inspired and learn about the tastes of these 
+            delights
+        </p>
+    </div>
+</div>
+
+{% for wines in wine_list %}
+           <p>{{wines.wine_name}}<br></p>
+                
+    
     {% endfor %}
 {% endblock %}
