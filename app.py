@@ -27,6 +27,10 @@ def get_winelist():
     return render_template("wines.html", wine_list=wine_list)
 
 
+@app.route("/wineinfo")
+def wineinfo():
+    return render_template("wineinfo.html")
+
 
 # Building NavBar with Flask
 
@@ -44,6 +48,7 @@ nav.register_element("navbar", Navbar(
 @app.route("/")
 def index():
     return render_template("base.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
