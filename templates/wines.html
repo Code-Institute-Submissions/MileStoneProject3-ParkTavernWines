@@ -17,30 +17,7 @@
         </p>
     </div>
 </div>
-<div class="row no-gutters">
-    <div class="col-3">
-        {% for wines in wine_list %}
-            {% if wine_color == "Red" %}
-            <p>{{wines.wine_name}}<br></p>
-             {% endif %}   
-            {% endfor %}
-        <button type="button" class="btn btn-danger">Red Wines</button>
 
-    </div>
-    <div class="col-3">
-        <button type="button" class="btn btn-light">White Wines</button>
-    </div>
-    <div class="col-3">
-        <button type="button" class="btn btn-rose">Rose Wines</button>
-    </div>
-    <div class="col-3">
-        <button type="button" class="btn btn-warning">Sparkling Wines</button>
-    </div>
-</div>
 
-{% for wines in wine_list %}
-           <p>{{wines.wine_name}}<br></p>
-                
-    
-    {% endfor %}
+
 {% endblock %}

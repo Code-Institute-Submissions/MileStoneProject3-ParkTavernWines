@@ -1,11 +1,20 @@
 {% extends "base.html" %}
 
-{% block content %}
+    {% block content %}
 
-    {% for wines in wine_list %}
+     {% for wines in wine_list %}
         
     
-    <h1>{{wines.wine_name}}</h1>
+    <h1 class="d-flex justify-content-center">{{wines.wine_name}}</h1>
+    <img src="{{wines.wine_image}}" class="img-fluid" alt="{{wines.wine_name}} image" width:200px; height: 200px;>
+    <ul>
+        <li>{{wines.wine_region}}</li>
+        <li>{{wines.wine_color}}</li>
+        <li>{{wines.wine_category}}</li>
+        <li>{{wines.wine_description}}</li>
+        <li>{{wines.wine_price}}</li>
+        
+    </ul>
 
     {% endfor %}
 {% endblock %}

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     {% block styles %}
     {% endblock %}
-    <title>Document</title>
+    <title>Park Tavern SW18</title>
 </head>
 <body>
     <header>
@@ -18,7 +18,11 @@
             </div>
         </div>
         <!---------------Creating Navbar-->
-        {{ nav.navbar.render() }}
+        <div class="row no-gutters">
+            <div class="offsett-4 col-4">
+                {{ nav.navbar.render() }}
+            </div>
+        </div>
     </header>
 
 {% block content %}{% endblock %}
