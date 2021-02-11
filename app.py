@@ -27,12 +27,16 @@ def get_winelist():
     return render_template("wines.html", wine_list=wine_list)
 
 # Building NavBar with Flask
+
+
 nav = Nav(app)
 
 
 nav.register_element("navbar", Navbar(
     "thenav",
-    View("Home Page", "index")))
+    View("Home Page", "index"),
+    View("Register", "index"),
+    View("Log In", "index")))
 
 
 @app.route("/")
