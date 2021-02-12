@@ -23,7 +23,7 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_wine_list")
 def get_winelist():
-    wine_list = mongo.db.wine_list.find()
+    wine_list = list(mongo.db.wine_list.find())
     return render_template("wines.html", wine_list=wine_list)
 
 
