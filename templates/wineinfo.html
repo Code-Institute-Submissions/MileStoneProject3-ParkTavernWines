@@ -6,15 +6,23 @@
         
     
     <h1 class="d-flex justify-content-center">{{wines.wine_name}}</h1>
-    <img src="{{wines.wine_image}}" class="img-fluid" alt="{{wines.wine_name}} image" width:200px; height: 200px;>
+    <div class="row no-gutters">
+    <div class="div col-md-4 offset-md-4">
+        <img src="{{wines.wine_image}}" class="img-fluid" alt="{{wines.wine_name}} image">
+    </div>
+    </div>
+    <div class="row no-gutters">
+    <div class="div col-md-4 offset-md-4">
     <ul>
-        <li>{{wines.wine_region}}</li>
-        <li>{{wines.wine_color}}</li>
-        <li>{{wines.wine_category}}</li>
-        <li>{{wines.wine_description}}</li>
-        <li>{{wines.wine_price}}</li>
+        <li>Region: {{wines.wine_region}}</li>
+        <li>Color: {{wines.wine_color}}</li>
+        <li>Category: {{wines.wine_category}}</li>
+        <li>Description: {{wines.wine_description}}</li>
+        <li>Price: {{wines.wine_price}}</li>
         
     </ul>
+    </div>
+    </div>
 
     {% endfor %}
 {% endblock %}
