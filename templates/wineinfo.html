@@ -4,7 +4,7 @@
 
      {% for wines in wine_list %}
         
-        {% if wines.wine_name == wine_name %}
+        {% if loop.wine_name == wine_name %}
     <h1 class="d-flex justify-content-center">{{wines.wine_name}}</h1>
     <div class="row no-gutters">
     <div class="div col-md-4 offset-md-4">
