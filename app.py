@@ -29,7 +29,8 @@ def get_winelist():
 
 @app.route("/wineinfo")
 def wineinfo():
-    return render_template("wineinfo.html")
+    wine_list = mongo.db.wine_list.find()
+    return render_template("wineinfo.html", wine_list=wine_list)
 
 
 # Building NavBar with Flask
