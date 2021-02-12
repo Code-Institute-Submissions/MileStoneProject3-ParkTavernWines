@@ -32,7 +32,6 @@ def wineinfo():
     wine_list = mongo.db.wine_list.find()
     return render_template("wineinfo.html", wine_list=wine_list)
 
-
 # Building NavBar with Flask
 
 
@@ -42,8 +41,18 @@ nav = Nav(app)
 nav.register_element("navbar", Navbar(
     "thenav",
     View("Home Page", "index"),
-    View("Register", "index"),
-    View("Log In", "index")))
+    View("Register", "register"),
+    View("Log In", "login")))
+
+
+@app.route("/register")
+def register():
+    return render_template("register.html")
+
+
+@app.route("/login")
+def login():
+    return render_template("login.html")
 
 
 @app.route("/")
