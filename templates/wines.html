@@ -18,9 +18,6 @@
     </div>
 </div>
 <div class="row no-gutters">
-    <a href="{{url_for('wineinfo')}}">press me</a>
-</div>
-<div class="row no-gutters">
     <div class="col-8 offset-2 d-flex justify-content-center btn-danger">
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
@@ -34,7 +31,7 @@
                     {% for wines in wine_list %}
                         {% if wines.wine_color == "Red" %}
                         <ul>
-                            <li><a href="{{url_for('wineinfo')}}"> {{ wines.wine_name }}</a></li>
+                            <li><a href="{{url_for('wineinfo', wine_id=wine._id)}}"> {{ wine.wine_name }}</a></li>
                         </ul>
         
                         {% endif %}

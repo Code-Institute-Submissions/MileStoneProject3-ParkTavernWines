@@ -2,28 +2,33 @@
 
     {% block content %}
 
-     {% for wines in wine_list %}
-        
-        {% if loop.wine_id == wines.id %}
-    <h1 class="d-flex justify-content-center">{{wines.wine_name}}</h1>
+ 
+    
+        <form class="col-12" method="POST" action="{{ url_for('wineinfo', wine_id=wine._id) }}">
+           
+           {% if wines in wine_list %}
+            
+            <h1 class="d-flex justify-content-center">{{wine.wine_name}}</h1>
     <div class="row no-gutters">
     <div class="div col-md-4 offset-md-4">
-        <img src="{{wines.wine_image}}" class="img-fluid" alt="{{wines.wine_name}} image">
+        <img src="{{wine.wine_image}}" class="img-fluid" alt="{{wines.wine_name}} image">
     </div>
     </div>
     <div class="row no-gutters">
     <div class="div col-md-4 offset-md-4">
     <ul>
-        <li>Region: {{wines.wine_region}}</li>
-        <li>Color: {{wines.wine_color}}</li>
-        <li>Category: {{wines.wine_category}}</li>
-        <li>Description: {{wines.wine_description}}</li>
-        <li>Price: {{wines.wine_price}}</li>
+        <li>Region: {{wine.wine_region}}</li>
+        <li>Color: {{wine.wine_color}}</li>
+        <li>Category: {{wine.wine_category}}</li>
+        <li>Description: {{wine.wine_description}}</li>
+        <li>Price: {{wine.wine_price}}</li>
         
     </ul>
     </div>
-    </div>
-    {% endif %}
+</div>
+</form>
 
     {% endfor %}
+        
+    
 {% endblock %}
