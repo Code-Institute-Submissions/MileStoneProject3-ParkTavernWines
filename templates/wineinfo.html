@@ -2,13 +2,11 @@
 
     {% block content %}
 <form class="col-12" method="POST" action="{{ url_for('wineinfo', wine_id=wine._id) }}">
-           
-           {% if wine in wine_list %}
-            
+    
             <h1 class="d-flex justify-content-center">{{wine.wine_name}}</h1>
     <div class="row no-gutters">
     <div class="div col-md-4 offset-md-4">
-        <img src="{{wine.wine_image}}" class="img-fluid" alt="{{wine.wine_name}} image">
+        <img src="{{wine.wine_image}}" class="img-fluid">
     </div>
     </div>
     <div class="row no-gutters">
@@ -22,6 +20,5 @@
     </ul>
     </div>
 </div>
-{% endif %}
 </form>  
 {% endblock %}

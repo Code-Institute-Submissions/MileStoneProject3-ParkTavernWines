@@ -18,7 +18,7 @@
     </div>
 </div>
 <div class="row no-gutters">
-    <div class="col-8 offset-2 d-flex justify-content-center btn-danger">
+    <div class="col-8 offset-2 d-flex justify-content-center btn-danger btn-lrg">
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
@@ -92,14 +92,14 @@
     </h2>
     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        {% for wines in wine_list %}
-    {% if wines.wine_color == "Sparkling" %}
-        <ul>
-            <li> {{ wines.wine_name }}</li>
-        </ul>
+        {% for wine in wine_list %}
+                        {% if wine.wine_color == "Sparkling" %}
+                        <ul>
+                            <li><a href="{{url_for('wineinfo', wine_id=wine._id)}}"> {{ wine.wine_name}}</a></li>
+                        </ul>
         
-    {% endif %}
-{% endfor %}
+                        {% endif %}
+                    {% endfor %}  
       </div>
     </div>
   </div>
