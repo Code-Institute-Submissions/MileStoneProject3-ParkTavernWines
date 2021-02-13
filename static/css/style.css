@@ -9,5 +9,11 @@ body {
     background-color: pink;
 }
 
+a, a:visited, a:link {
+    color: black;
+}
 
+a:hover {
+    color: white;
+}
 
