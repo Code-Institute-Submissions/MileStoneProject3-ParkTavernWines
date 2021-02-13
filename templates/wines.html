@@ -28,10 +28,10 @@
                 </h2>
             <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    {% for wines in wine_list %}
-                        {% if wines.wine_color == "Red" %}
+                    {% for wine in wine_list %}
+                        {% if wine.wine_color == "Red" %}
                         <ul>
-                            <li><a href="{{url_for('wineinfo', wine_id=wine._id)}}"> {{ wine.wine_name }}</a></li>
+                            <li><a href="{{url_for('wineinfo', wine_id=wine._id)}}"> {{ wine.wine_name}}</a></li>
                         </ul>
         
                         {% endif %}
@@ -50,13 +50,14 @@
     </h2>
     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        {% for wines in wine_list %}
-            {% if wines.wine_color == "White" %}
-                <ul>
-                    <li>{{ wines.wine_name }}</li>
-                </ul>
-            {% endif %}
-        {% endfor %}
+        {% for wine in wine_list %}
+                        {% if wine.wine_color == "White" %}
+                        <ul>
+                            <li><a href="{{url_for('wineinfo', wine_id=wine._id)}}"> {{ wine.wine_name}}</a></li>
+                        </ul>
+        
+                        {% endif %}
+                    {% endfor %}  
       </div>
     </div>
   </div>
@@ -70,14 +71,14 @@
     </h2>
     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        {% for wines in wine_list %}
-    {% if wines.wine_color == "Rose" %}
-        <ul>
-            <li> {{ wines.wine_name }}</li>
-        </ul>
+        {% for wine in wine_list %}
+                        {% if wine.wine_color == "Rose" %}
+                        <ul>
+                            <li><a href="{{url_for('wineinfo', wine_id=wine._id)}}"> {{ wine.wine_name}}</a></li>
+                        </ul>
         
-    {% endif %}
-{% endfor %}
+                        {% endif %}
+                    {% endfor %}  
       </div>
     </div>
   </div>
