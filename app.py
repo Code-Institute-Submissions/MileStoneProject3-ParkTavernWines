@@ -90,6 +90,26 @@ def login():
     return render_template('login.html')
 
 
+@app.route("/addreview/<wine_id>", methods=["GET", "POST"])
+def addreview(wine_id):
+    if session.get("user"):
+        if request.method == "POST":
+            review = {
+                "wine_id": wine_id,
+                "comment": request.form.get("comment"),
+                "user_id": session["user"],
+            }
+            mongo.db.reviews.insert_one(review)
+            flash("Review Successfully Added")
+            wine = mongo.db.wine_list.find_one({'_id': ObjectId(wine_id)})
+            return redirect(url_for("wineinfo.html", wine_id=wine_id))
+        else:
+            wine = mongo.db.wine_list.find_one({'_id': ObjectId(wine_id)})
+            return render_template("addreview.html", wine=wine)
+    flash("You Must Login To Add A Review")
+    return redirect(url_for("login"))
+
+
 @app.route("/")
 def index():
     return render_template("base.html")

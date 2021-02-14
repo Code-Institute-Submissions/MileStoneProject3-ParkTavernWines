@@ -20,5 +20,10 @@
     </ul>
     </div>
 </div>
-</form>  
+</form> 
+<div class="row no-gutters">
+    <div class="div col-md-4 offset-md-4">
+        <a href="{{ url_for('addreview', wine_id=wine._id) }}" class="btn-dark d-flex justify-content-center">Review Wine</a>
+    </div>
+</div>
 {% endblock %}
