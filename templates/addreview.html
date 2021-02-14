@@ -16,12 +16,16 @@
 </div>
 
    <form class="" method="POST" action="{{ url_for('addreview', wine_id=wine._id) }}">
-    <div class="row no-gutters d-flex justify-content-center">
-    <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2">     
-    <div class="input-field">
-            <textarea id="comment" name="comment" class="validate" minlength="5" maxlength="500" required></textarea>
+    <div class="row no-gutters">
+    <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2">
+        <h6>Review for {{wine.wine_name}} </h6>     
+        <div class="row no-gutters">
+    <div class="md-form amber-textarea active-amber-textarea-2">
+        
+        <textarea id="comment" name="comment" class="col-12 md-textarea form-control" minlength="5" maxlength="500" required>{{wine.wine_name}}-  </textarea>
             <label for="comment"></label>
-         </div>
+        
+    </div>
          </div>
          </div>
       
@@ -35,6 +39,5 @@
          </div>
          </div>
          </form>
-
 
     {% endblock %}

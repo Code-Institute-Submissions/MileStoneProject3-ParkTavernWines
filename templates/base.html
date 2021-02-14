@@ -19,22 +19,42 @@
             </div>
         </div>
         <!---------------Creating Navbar-->
-<nav class="navbar navbar-light btn-rose">
-    <div class="row no-gutters">
-			<div class="container-fluid">
-                 {% if session.user %}
+        {% if session.user %}
+<nav class="navbar navbar-light">
+                 
+                 <div class="container-fluid">
+                 <div class="row no-gutters">
+                 <div class="col-4">
                     <a href="{{ url_for('index') }}">Home</a>
+                </div>
+                <div class="col-4">
                     <a href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+                </div>
+                    <div class="col-4">    
                     <a href="{{ url_for('logout') }}">Log Out</a>
+                </div>
+            </div>
+        </div>
                 {% else %}
+                
+               
+            <div class="row no-gutters">
+                <div class="col-4">
                     <a href="{{ url_for('index') }}">Home</a>
-					<a href="{{ url_for('register') }}">Register</a>
+                </div> 
+                <div class="col-4">   
+                    <a href="{{ url_for('register') }}">Register</a>
+                </div>
+                <div class="col-4">    
                     <a href="{{ url_for('login') }}">Log In</a>
-                  {% endif %}  
-            </div>
-            </div>
-		</nav>
-    </header>
+                </div>
+                
+
+                </div>
+                </nav>
+                {% endif %}
+                    
+                </header>
         <main class="content-container">
          {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
             <div class="row mx-auto message_container">
@@ -48,15 +68,22 @@
       </main>
     
     <footer>
-        <div class="row no-gutters">
-            <div class="row no-gutters">
-            <div class="col-8">
-                <h4 class="textStyle">lalalalalalala</h4>
+        <div class="row no-gutters pt-5">
+            <div class="col-3">
+                <img src="{{url_for('static', filename='images/meghan.PNG')}}" class="w-80 h-30 img-fluid object-fit d-flex">
             </div>
-            <div class="col-4">
-                <a href="https://www.facebook.com/pages/The-Park-Tavern-Wandsworth/468975299912096" aria-hidden="true" target="_blank"><i class="d-ilnine social fa fa-facebook-square p-2"></i></a>
-                <a href="https://www.instagram.com/parktavernsw18/?hl=en" aria-hidden="true" target="_blank"><i class="d-inline social fa fa-instagram p-2"></i></a>
+            <div class="col-3">
+                <img src="{{url_for('static', filename='images/wine.PNG')}}" class="w-80 h-30 img-fluid object-fit d-flex">
             </div>
+            <div class="col-3">
+                <img src="{{url_for('static', filename='images/meg.PNG')}}" class="w-80 h-30 img-fluid object-fit d-flex">
+            </div>
+            
+            <div class="col-3 d-flex justify-content-center">
+                <a href="https://www.facebook.com/pages/The-Park-Tavern-Wandsworth/468975299912096" aria-hidden="true" target="_blank"><i class="d-inlnine social mr-3 fa fa-facebook-square fa-3x"></i></a>
+                <a href="https://www.instagram.com/parktavernsw18/?hl=en" aria-hidden="true" target="_blank"><i class="d-inline social fa fa-instagram fa-3x"></i></a>
+                
+        
         </div>
         </div>
     </footer>
