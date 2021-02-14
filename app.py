@@ -35,19 +35,6 @@ def wineinfo(wine_id):
     return render_template("wineinfo.html", wine=wine, wine_list=wine_list)
 
 
-# Building NavBar with Flask
-
-
-nav = Nav(app)
-
-
-nav.register_element("navbar", Navbar(
-    "thenav",
-    View("Home Page", "index"),
-    View("Register", "register"),
-    View("Log In", "login")))
-
-
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -79,15 +66,24 @@ def login():
             if check_password_hash(
                  existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
+                flash("Success...Browse our winessss")
                 return redirect(url_for(
-                    "wines", username=session["user"]))
+                    "profile", username=session["user"]))
+
             else:
                 flash("Whoops too much wine, Username/Password is incorrect")
                 return redirect(url_for("login"))
         else:
-            flash("Sorry, Username does not exist")
-            return redirect(url_for("login"))
+            flash("Are you new? Username doesn't exist")
+            return redirect(url_for("register"))
     return render_template('login.html')
+
+
+@app.route("/logout")
+def logout():
+    flash("Miss You Already, enjoy your wine....sip sip sip away")
+    session.pop("user")
+    return redirect(url_for("login"))
 
 
 @app.route("/addreview/<wine_id>", methods=["GET", "POST"])
@@ -102,12 +98,26 @@ def addreview(wine_id):
             mongo.db.reviews.insert_one(review)
             flash("Review Successfully Added")
             wine = mongo.db.wine_list.find_one({'_id': ObjectId(wine_id)})
-            return redirect(url_for("wineinfo.html", wine_id=wine_id))
+            return redirect(url_for("profile", wine_id=wine_id))
         else:
             wine = mongo.db.wine_list.find_one({'_id': ObjectId(wine_id)})
             return render_template("addreview.html", wine=wine)
     flash("You Must Login To Add A Review")
     return redirect(url_for("login"))
+
+
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    if session["user"]:
+        wines = []
+        if session["user"] == "admin":
+            reviews = list(mongo.db.reviews.find({}))
+        else:
+            reviews = list(mongo.db.reviews.find({'user_id': session['user']}))
+    return render_template("profile.html", username=username, reviews=reviews,
+    wines=wines)
 
 
 @app.route("/")

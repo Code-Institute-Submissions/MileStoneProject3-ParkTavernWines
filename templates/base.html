@@ -19,15 +19,21 @@
             </div>
         </div>
         <!---------------Creating Navbar-->
-        <div class="row no-gutters">
-            <div class="col-4">
-             <ul class="navbar">
-      <li class="nav-item">
-        <a class="nav-link active">{{ nav.navbar.render() }}</a>
-      </li>
-    </ul>
-    </div>
-    </div> 
+<nav class="navbar navbar-light btn-rose">
+    <div class="row no-gutters">
+			<div class="container-fluid">
+                 {% if session.user %}
+                    <a href="{{ url_for('index') }}">Home</a>
+                    <a href="{{ url_for('profile', username=session['user']) }}">Profile</a>
+                    <a href="{{ url_for('logout') }}">Log Out</a>
+                {% else %}
+                    <a href="{{ url_for('index') }}">Home</a>
+					<a href="{{ url_for('register') }}">Register</a>
+                    <a href="{{ url_for('login') }}">Log In</a>
+                  {% endif %}  
+            </div>
+            </div>
+		</nav>
     </header>
         <main class="content-container">
          {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}

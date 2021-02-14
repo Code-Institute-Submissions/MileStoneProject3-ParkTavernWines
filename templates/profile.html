@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+    {% block content %}
+     <div class="row no-gutters">
+        <div class=" d-flex justify-content-center col-12">
+            <h1>{{ username }}'s' Profile</h1>
+        </div>
+         {% if reviews|length >= 0 %}
+{% for review in reviews %}
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <div class="col s11 m9">
+                  <strong>{{ review.user_id }}</strong>
+                  <strong>Review Details</strong>
+               <p>{{ review.comment }}</p>
+               </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+{% endif %}
+    {% endblock %}
