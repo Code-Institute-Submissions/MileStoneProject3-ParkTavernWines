@@ -99,12 +99,12 @@ def addreview(wine_id):
             mongo.db.reviews.insert_one(review)
             flash("Review Successfully Added")
             wine = mongo.db.wine_list.find_one({'_id': ObjectId(wine_id)})
-            return redirect(url_for("profile", wine_id=wine_id))
+            return redirect(url_for("wineinfo", wine_id=wine_id))
         else:
             wine = mongo.db.wine_list.find_one({'_id': ObjectId(wine_id)})
             return render_template("addreview.html", wine=wine)
-    flash("You Must Login To Add A Review")
-    return redirect(url_for("login"))
+    flash("You Must Register/Log In To Add A Review")
+    return redirect(url_for("register"))
 
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
