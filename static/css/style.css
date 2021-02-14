@@ -1,6 +1,6 @@
 /* Body Styling */
 
-body {
+body, header, footer {
     background-color: #a7dcb2;
     font-family: sans-serif;
 }

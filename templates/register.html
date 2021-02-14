@@ -7,46 +7,24 @@
     </div>
 </div>
 <div class="row">
-        <form class="col-md-6 offset-md-3 col-sm-8 offset-sm-2" method="POST" action="{{ url_for('register') }}">
-            <div class="row">
-					<div class="input-field">
-                        <label for="email">E-mail Adress</label>
-						<input id="email" name="email" type="email" class="validate">
-						
-					</div>
-                </div>    
-            <div class="row">
-					<div class="input-field">
-                        <label for="username">Username</label>
-						<input id="username" name="username" type="text" class="validate">
-						
-					</div>
-                </div>
-                <div class="row no-gutters">
-                    <div class="input-field">
-                        <label for="password">Password</label>
-                        <input id="password" name="password" type="password" class="validate">
-                        
+     <form class="col-md-6 offset-md-3 col-sm-8 offset-sm-2" method="POST" action="{{ url_for('register') }}">
+                    <div class="form-group">
+                        <label for="username" class="input-font-size">Username</label>
+                        <input id="username" name="username" type="text" class="validate form-control" placeholder="username" required>
                     </div>
-                </div>
-                <!-- register -->
-                <div class="row">
-                    <button type="submit" class="btn-light">
-                        Register
-                    </button>
-                </div>
-        </form>
+                    <div class="form-group">
+                        <label for="password" class="input-font-size">Password</label>
+                        <input id="password" name="password" type="password" class="validate form-control" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Email" class="input-font-size">E-mail Address</label>
+                        <input type="email" name="email" class="validate form-control" id="email" placeholder="example@emailadress.com" required>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-secondary btn-lg btn-block mt-5 mb-5">Submit</button>
+                    </div>
+                </form> 
+        
+            
 </div>
-{% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                <div class="row no-gutters">
-                        <div class="col-8 offset-2 col-md-6 offset-md-3">
-                
-                        <h4>{{ message }}</h4>
-                    </div>
-                </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
     {% endblock %}

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     {% block styles %}
     {% endblock %}
@@ -26,10 +27,30 @@
     </ul>
     </div> 
     </header>
-        {% block content %}{% endblock %}
-
+        <main class="content-container">
+         {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+            <div class="row mx-auto message_container">
+                <div class="alert alert-warning mx-auto mt-5 d-flex justify-content-center" role="alert">
+                {{message}}
+                </div>
+            </div>
+         {% endfor %} {% endif %} {% endwith %}
+         {% block content %}
+         {% endblock %}
+      </main>
+    
     <footer>
-        
+        <div class="row no-gutters">
+            <div class="row no-gutters">
+            <div class="col-8">
+                <h4 class="textStyle">lalalalalalala</h4>
+            </div>
+            <div class="col-4">
+                <a href="https://www.facebook.com/pages/The-Park-Tavern-Wandsworth/468975299912096" aria-hidden="true" target="_blank"><i class="d-ilnine social fa fa-facebook-square p-2"></i></a>
+                <a href="https://www.instagram.com/parktavernsw18/?hl=en" aria-hidden="true" target="_blank"><i class="d-inline social fa fa-instagram p-2"></i></a>
+            </div>
+        </div>
+        </div>
     </footer>
     <script> src="{{ url_for('static', filename='js/main.js') }}"</script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
