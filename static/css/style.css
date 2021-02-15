@@ -1,14 +1,23 @@
-/* Body Styling */
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
+/*------Body Styling---*/
 
 body, header, footer {
     background-color: #a7dcb2;
     font-family: sans-serif;
 }
 
+/*---------button style----*/
+
 .btn-rose{
     background-color: pink;
 }
-
+/*---------------link styles---*/
 a, a:visited, a:link {
     color: black;
 }
@@ -16,6 +25,7 @@ a, a:visited, a:link {
 a:hover {
     color: white;
 }
+
 
 .fa{
     font-size: 40px;

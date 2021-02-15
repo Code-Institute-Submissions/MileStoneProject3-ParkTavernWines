@@ -1,36 +1,36 @@
 {% extends "base.html" %}
-
     {% block content %}
+    <!-----------Title-->
 <div class="row no-gutters">
     <div class=" d-flex justify-content-center col-12">
         <h1>Register</h1>
     </div>
 </div>
+<!-----------Re-direct if already a user-->
 <div class="row no-gutters pb-3">
     <div class="offset-3 col-6 offset-sm-2 col-sm-8 d-flex justify-content-center">
         <p>Have you already registered, log in <a href="{{ url_for('login') }}">here</a> to continue your journey through our wine list.
         </p>
     </div>
 </div>
+<!-----------Registration Form-->
 <div class="row no-gutters">
      <form class="col-md-6 offset-md-3 col-sm-8 offset-sm-2" method="POST" action="{{ url_for('register') }}">
-                    <div class="form-group">
-                        <label for="username" class="input-font-size">Username</label>
-                        <input id="username" name="username" type="text" class="validate form-control" placeholder="username" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="password" class="input-font-size">Password</label>
-                        <input id="password" name="password" type="password" class="validate form-control" placeholder="Password" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="Email" class="input-font-size">E-mail Address</label>
-                        <input type="email" name="email" class="validate form-control" id="email" placeholder="example@emailadress.com" required>
-                    </div>
-                    <div>
-                        <button type="submit" class="btn btn-secondary btn-lg btn-block mt-5 mb-5">Submit</button>
-                    </div>
-                </form> 
-        
-            
+        <div class="form-group">
+            <label for="username" class="input-font-size">Username</label>
+                <input id="username" name="username" type="text" class="validate form-control" placeholder="username" required>
+        </div>
+        <div class="form-group">
+            <label for="password" class="input-font-size">Password</label>
+            <input id="password" name="password" type="password" class="validate form-control" placeholder="Password" required>
+        </div>
+        <div class="form-group">
+            <label for="Email" class="input-font-size">E-mail Address</label>
+            <input type="email" name="email" class="validate form-control" id="email" placeholder="example@emailadress.com" required>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-secondary btn-lg btn-block mt-5 mb-5">Submit</button>
+        </div>
+    </form> 
 </div>
     {% endblock %}

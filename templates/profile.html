@@ -1,21 +1,21 @@
 {% extends "base.html" %}
-
     {% block content %}
+    <!-----------Title-->
      <div class="row no-gutters">
         <div class=" d-flex justify-content-center col-12">
             <h1>{{ username }}'s Profile</h1>
         </div>
     </div>
-    
-         {% if reviews|length >= 0 %}
-{% for review in reviews %}
-        <div class="row no-gutters">
-            <div class="col-8 offset-2 d-flex justify-content-center">
-                <ul>
+    <!----------------Reviews left by User-->
+    {% if reviews|length >= 0 %}
+    {% for review in reviews %}
+    <div class="row no-gutters">
+        <div class="col-8 offset-2 d-flex justify-content-center">
+            <ul>
                <li>{{ review.comment }}</li>
-               </ul>
-            </div>
+            </ul>
         </div>
+    </div>
 
 {% endfor %}
 {% endif %}

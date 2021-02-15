@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-
     {% block content %}
-
+<!-----------Title-->
 <div class="row no-gutters p-3">
     <div class=" d-flex justify-content-center col-12">
         <h1>{{wine.wine_name}}</h1>
     </div>
 </div>
+<!-----------Description-->
 <div class="row no-gutters pb-3">
     <div class="offset-2 col-8">
         <p>Whether you have enjoyed a tipple or two of this wine or just can't wait to get your
@@ -15,29 +15,24 @@
     </div>
 </div>
 
-   <form class="" method="POST" action="{{ url_for('addreview', wine_id=wine._id) }}">
+<!--------------Add Wine Review-->
+<form class="" method="POST" action="{{ url_for('addreview', wine_id=wine._id) }}">
     <div class="row no-gutters">
-    <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2">
-        <h6>Review for {{wine.wine_name}} </h6>     
-        <div class="row no-gutters">
-    <div class="md-form amber-textarea active-amber-textarea-2">
+        <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2">
+            <h6>Review for {{wine.wine_name}} </h6>     
+            <div class="row no-gutters">
+                <div class="md-form amber-textarea active-amber-textarea-2">
+                    <textarea id="comment" name="comment" class="col-12 md-textarea form-control" minlength="5" maxlength="500" required>{{wine.wine_name}}-  </textarea>
+                    <label for="comment"></label>
         
-        <textarea id="comment" name="comment" class="col-12 md-textarea form-control" minlength="5" maxlength="500" required>{{wine.wine_name}}-  </textarea>
-            <label for="comment"></label>
-        
+                </div>
+            </div>
+        </div>
+        <div class="row no-gutters d-flex justify-content-center">
+            <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2">  
+                <button type="submit" class="btn-lg">Add Review</button>
+            </div>         
+        </div>
     </div>
-         </div>
-         </div>
-      
-      <!-- submit button -->
-    
-         <div class="row no-gutters d-flex justify-content-center">
-    <div class="col-md-6 offset-md-3 col-sm-8 offset-sm-2">  
-            <button type="submit" class="btn-lg">
-            Add Review
-            </button>
-        </div>         
-        </div>
-        </div>
-        </form>
-    {% endblock %}
+</form>
+{% endblock %}

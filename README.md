@@ -47,7 +47,7 @@ when visualy looking at the end product.The medium and desktop are the same as i
 devices where it had to be changed. Both are in the same folder. 
 
 #### DESKTOP
-[Desktop WireFrames]()
+[Desktop WireFrames](MS3 Wireframes.bmpr)
 
 #### MOBILE 
 [Mobile WireFrames]()
@@ -57,34 +57,40 @@ I have chosen the color scheme that fits with the current website design of Park
 fluidity of the site. The colors are neutral and easy on the eye. See the image below for the colors 
 used throughout my site. 
 
-![Color Scheme](assets/images/)
+![Color Scheme](static/images/Colours.PNG)
 
 ### Typogrophy
 When looking at the typrogrophy of the website I would have liked to explore a few different options but
 decided to keep the "Sans-serif" font from google fonts as this is used on the main Park Tavern website 
-as when my feature is added I wanted it to keep fluidity and ensure it works professionaly. I added an 
-extra font which is  " " from google fonts purely for areas where I wanted a contrasting font to make more
-appealing to the eye. 
+as when my feature is added I wanted it to keep fluidity and ensure it works professionaly.
 
 ## Features
 
-### Carousel
+### Search Wines By color
+We have an extensive amount of wines so to categorize and allow our user to search by color 
+means it makes it easier to navigate around the page. Then to click on each individual wine to 
+get more information and a picture of it too.
 
 
-### Search by main spirit
+### More information
+A page dedicated to each wine showing their description, price range, region they are from.
+Basically allowing our customers to learn more about the wine that they may want to drink.
 
 
-### Search cocktail recipe by recipe name
+### Log In
+To allow our user to log in and review wines and build themsleves a little review page.
 
 
-### Chose your Destiny
+### Register
+To get your own account. 
 
 
 ## Features Left to Implement
 I have a few features left to implement and these are as follows.
 ### 
-
+I would like to add a few more features such as get all reviews to show under each wine.
 ### 
+Get a star rating for each wine and see which ones are our users favorites. 
 
 ## Technologies Used
 Below is a list of all technologies used in order to achieve the end goal.
@@ -94,33 +100,35 @@ Below is a list of all technologies used in order to achieve the end goal.
 * CSS - A style sheet language used for the design of the web page
 * JavaScript - A text based programming language used to make a web page
 interactive, in conjunction with HTML and CSS as a base for formatting.
-* Python
+* Python- for functionality of my site
 
 #### Frameworks
-* Bootstrap [https://v4-alpha.getbootstrap.com/]- Used for layout of my web page and for styling as well.
-* JQuery [https://code.jquery.com/jquery-3.5.1.js]
-* Flask 
-* 
+* Bootstrap- Used to format and style my site.
+* Flask- Micro framework for python
+* MongoDB- to store my database
+* Cloudinary- to store my photos and get a url for each of them to link to database
+
 #### Libraries
 * Google Fonts [https://fonts.google.com/]
 * Font Awesome(Bootstrap Library) [https://www.bootstrapcdn.com/fontawesome/]
-* Bootstrap Jquery and Popover for my form on register.html [https://getbootstrap.com/docs/3.3/javascript/]
+* Bootstrap Jquery [https://getbootstrap.com/docs/3.3/javascript/]
 * W3 Schools [https://www.w3schools.com/] a great base to get refresher materialswhen help was needed.
 * Youtube [https://www.youtube.com/] for some tutorials when things where tough
 
 ##### GitPod/GitHub
 * GitPod was the IDE I used for my project
-* GitHub was used to host my website and the repositary
+
+##### Heroku
+* Heroku was used to deploy my project
 
 ## Testing 
 
 * W3C HTML Validator[https://validator.w3.org/]
 * W3C CSS Validator[https://jigsaw.w3.org/css-validator/]
 * Autoprefixer CSS[https://autoprefixer.github.io/]
-* JavaScript Validator[https://extendsclass.com/javascript-fiddle.html]
 * Am I responsive [http://ami.responsivedesign.is/] used to check compatibility with a numerous amount of devices,
 see picture below.
-![Am I Responsive](assets/images/Amiresponsive.PNG)
+![Am I Responsive](assets/images/amiresponsive.PNG)
 * I consistantly was using chrome web developer tools, however when push to my mobile found these to not be the most
 accurate. The design was though out to ensure smaller screens were not squished and legible throughout. The layout 
 of the other pages are slightly different throughout each breakpoint.
@@ -143,31 +151,20 @@ of the other pages are slightly different throughout each breakpoint.
 1. 
  
 ## Issues while Testing
-* I had a few issues with HTML validator, I corrected some which had bad/unused id's in them, however there are 
-two errors in which I have left as it works. The role of button shouldn't have an a link. 
-* My CSS came back with 3 errors, however 2 were linked through to bootstrap with unknown attributes. I had one unknown
-media query come back. Fixed and sorted. 
-* JavaScript- I was just missing a few semi colons that are now in place. 
+*  Only issues that came back from HTML and CSS was that I had forgotten alt attributes for 
+my images, now sorted.
+* 
 
 ## Deployment
-My project was started on GitHub[github.com] by making a repositary and then using them with the GitPod IDE. I did the 
-following steps in order to deploy my project.
+For my website I used Heroku to deploy my site, See below steps followed to deploy.
 
-1. From GitPod after the latest commit then we use GitPush to get the code in GitHub repositary.
-2. Go to the required GitHub repositary and go to settings.
-3. Scroll down to GitHub Pages section in settings
-4. Where it says source choose master branch.
-5. Then your site is published
-6. The link is [https://megmog88.github.io/Meg-Mixology-MS2/] to the live website.
-
-## Clone or Download
-1. When in the git hub repositary click on the green button "Clone or Download"
-2. Copy the URL that is produced
-3. Open your chosen IDE
-4. Type in the workspace "git clone"
-5. The paste the copied URL
-6. Press enter
-7. And you are complete :)
+1. Create Name for App
+2. Link the app to the GitHub repository by going to the "Deploy" tab in the main app menu.
+3. Select a branch to deploy automatically
+4. Pipenv to deal with my virtual enviroment and requirements.txt for dependancies
+5. Create  "Procfile", needed by Heroku in order to know how to run the app
+6. Connected to github with config values stored
+7. All connected and up and running on Heroku's servers. 
 
 
 ## Credits

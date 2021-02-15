@@ -1,29 +1,29 @@
 {% extends "base.html" %}
-
     {% block content %}
+    <!-----------Wine Information Format-->
 <form class="col-12" method="POST" action="{{ url_for('wineinfo', wine_id=wine._id) }}">
-    
-            <h1 class="d-flex justify-content-center">{{wine.wine_name}}</h1>
+    <h1 class="d-flex justify-content-center">{{wine.wine_name}}</h1>
+        <div class="row no-gutters">
+            <div class="div col-md-4 offset-md-4">
+                <img src="{{wine.wine_image}}" class="img-fluid">
+            </div>
+        </div>
+        <div class="row no-gutters">
+            <div class="div col-md-4 offset-md-4">
+                <ul>
+                    <li>Region: {{wine.wine_region}}</li>
+                    <li>Color: {{wine.wine_color}}</li>
+                    <li>Category: {{wine.wine_category}}</li>
+                    <li>Description: {{wine.wine_description}}</li>
+                    <li>Price: {{wine.wine_price}}</li>
+                </ul>
+            </div>
+        </div>
+    </form> 
+    <!-----------Button to Review Wine-->
     <div class="row no-gutters">
-    <div class="div col-md-4 offset-md-4">
-        <img src="{{wine.wine_image}}" class="img-fluid">
+        <div class="div col-md-4 offset-md-4">
+            <a href="{{ url_for('addreview', wine_id=wine._id) }}" class="btn-dark btn-lg d-flex justify-content-center">Review Wine</a>
+        </div>
     </div>
-    </div>
-    <div class="row no-gutters">
-    <div class="div col-md-4 offset-md-4">
-    <ul>
-        <li>Region: {{wine.wine_region}}</li>
-        <li>Color: {{wine.wine_color}}</li>
-        <li>Category: {{wine.wine_category}}</li>
-        <li>Description: {{wine.wine_description}}</li>
-        <li>Price: {{wine.wine_price}}</li>
-    </ul>
-    </div>
-</div>
-</form> 
-<div class="row no-gutters">
-    <div class="div col-md-4 offset-md-4">
-        <a href="{{ url_for('addreview', wine_id=wine._id) }}" class="btn-dark btn-lg d-flex justify-content-center">Review Wine</a>
-    </div>
-</div>
 {% endblock %}
