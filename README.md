@@ -138,18 +138,9 @@ of the other pages are slightly different throughout each breakpoint.
     - Safari
     - Google Chrome
     - Internet Explorer
-    The only one that my site does not work on is Internet Explorer but this is a known issue as I used fetch API
-    which is not supported by this browser so a known bug. Internet Explorer is however outdated.
 
 ## Testing User Stories
-1. As a user in lockdown I can easily be inspired by the many different cocktails displayed on the pageand even 
-take a look by my flavour interests.
-2. As someone excited to learn new twists I can now do this with a bit of help and guidance
-3. As a cocktail lover I can explore other options out there and broaden my horizons
-4. As a newbie in hospitality I can now easily acces a lot of information and look good infront of my boss.
-5. As a business developer the websoite shows me up to date cocktails and shows me trends in the cocktails. Also
-allows me to strengthen my knowledge.
-6. The world clearly has a lot more for me to offer and a business owner and making cocktails is definately one of them.
+1. 
  
 ## Issues while Testing
 * I had a few issues with HTML validator, I corrected some which had bad/unused id's in them, however there are 
@@ -182,17 +173,14 @@ following steps in order to deploy my project.
 ## Credits
 
 ### Content
-* The SearchRecipe part of my code was inspired and mostly taken from the followoing link(author: Terry Lenox) as it helped me to understand and
-added value to my project.
-[click here to view](https://stackoverflow.com/questions/49580528/how-to-filter-through-json-return-from-api-with-similar-prop)
+* Taken from Park Tavern SW18 wine list.
 * All written by myself(Meghan Jane Spence)
-* Used  cocktail DB API[https://www.thecocktaildb.com/api.php] to get cocktail information running through my website
+
 ### Media
-* Golden Border Cliparts #2506192 (License: Personal Use)
-* Card Images I got from my sister as she had them available and made the background transparent for me.
-* Cocktail images come from the coktail API
+* Park Tavern- I used all images from Park Tavern as it is where I work and got permission from 
+the owner of the business before using any media. 
 
 ## Acknowledgements
-* First and foremost my little sister(best friend) for helping with the logo and encouragement throughout,
-all be lockdowned seperately this time around.
+* First and foremost my little sister(best friend) for helping with the logo.
 * My mentor Maranatha- Generally just giving me the go to attidude I need.
+* My amazing man in my life, pushing me through to the last minute to get this done. Thanks Jak! x
