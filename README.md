@@ -41,16 +41,14 @@ and able to reccomend to our awesome guests with ease and confidence.
 wines. A guest always values a staff members thoughts!!
 
 ### Wireframes
-Below I have 2 different Wireframes in order to ensure the design of my project works responsively. 
+Below I have Wireframes in order to ensure the design of my project works responsively. 
 These were of course the initial design and a few parts have changed due to practicality and more realistic
-when visualy looking at the end product.The medium and desktop are the same as it was only smaller 
-devices where it had to be changed. Both are in the same folder. 
+when visualy looking at the end product. The mobile size will only vary a small amount throughout the 
+project therefore no mobile wireframes. 
 
 #### DESKTOP
-[Desktop WireFrames](MS3 Wireframes.bmpr)
 
-#### MOBILE 
-[Mobile WireFrames]()
+
 
 ### Color scheme
 I have chosen the color scheme that fits with the current website design of Park Tavern SW18 to allow 
