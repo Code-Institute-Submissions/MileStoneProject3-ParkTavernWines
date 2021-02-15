@@ -10,6 +10,8 @@ well we are still offering deliveries for wines under current restrictions. As w
 staff members to update their knowledge base and allows them to take time to review the wines. A wise 
 person once told me knowledge is power, so I will leave you with that thought well I get on with my website.
 
+You can get to my live site through the following link [https://park-tavern-wines.herokuapp.com/]
+
  
 # Table of Contents
 
@@ -181,6 +183,7 @@ For my website I used Heroku to deploy my site, See below steps followed to depl
 
 ### Content
 * Taken from Park Tavern SW18 wine list.
+* The Code Institute tutorials
 * All written by myself(Meghan Jane Spence)
 
 ### Media
@@ -191,3 +194,4 @@ the owner of the business before using any media.
 * First and foremost my little sister(best friend) for helping with the logo.
 * My mentor Maranatha- Generally just giving me the go to attidude I need.
 * My amazing man in my life, pushing me through to the last minute to get this done. Thanks Jak! x
+* The Park Tavern for allowing me to use all media and ofcourse employing me :)
