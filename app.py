@@ -11,6 +11,7 @@ if os.path.exists("env.py"):
 
 app = Flask(__name__)
 
+# Configuring
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
@@ -21,12 +22,14 @@ mongo = PyMongo(app)
 
 @app.route("/")
 @app.route("/get_wine_list")
+# Get the wine list and iterate through
 def get_winelist():
     wine_list = list(mongo.db.wine_list.find())
     return render_template("wines.html", wine_list=wine_list)
 
 
 @app.route("/wineinfo/<wine_id>", methods=["GET", "POST"])
+# Find wine by id so when clicked on one page it only shows the wine clicked
 def wineinfo(wine_id):
     wine = mongo.db.wine_list.find_one({"_id": ObjectId(wine_id)})
     wine_list = mongo.db.wine_list.find()
@@ -35,6 +38,7 @@ def wineinfo(wine_id):
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    # make a register page
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
@@ -57,6 +61,7 @@ def register():
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
+    # making the login page
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
           {"username": request.form.get("username").lower()})
@@ -80,6 +85,7 @@ def login():
 
 @app.route("/logout")
 def logout():
+    # allow the user to logout
     flash("Miss You Already, enjoy your wine....sip sip sip away")
     session.pop("user")
     return redirect(url_for("login"))
@@ -87,6 +93,7 @@ def logout():
 
 @app.route("/addreview/<wine_id>", methods=["GET", "POST"])
 def addreview(wine_id):
+    # allows to adda review of the wine
     if session.get("user"):
         if request.method == "POST":
             review = {
@@ -107,6 +114,7 @@ def addreview(wine_id):
 
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
+    # giving the user a profile page
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     if session["user"]:
@@ -115,16 +123,20 @@ def profile(username):
             reviews = list(mongo.db.reviews.find({}))
         else:
             reviews = list(mongo.db.reviews.find({'user_id': session['user']}))
-    return render_template("profile.html", username=username, reviews=reviews,
-    wines=wines)
+    return render_template(
+        "profile.html", username=username,
+        reviews=reviews, wines=wines)
 
 
 @app.route("/")
 def index():
+    # base of html templates
     return render_template("base.html")
+
+# initialising the app
 
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=True)
+            debug=False)

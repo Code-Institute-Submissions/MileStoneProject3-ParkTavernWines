@@ -48,7 +48,7 @@ project therefore no mobile wireframes.
 
 #### DESKTOP
 
-
+WireFrames[https://github.com/megmog88/MileStoneProject3-ParkTavernWines/blob/master/MS3%20Wireframes.bmpr]
 
 ### Color scheme
 I have chosen the color scheme that fits with the current website design of Park Tavern SW18 to allow 
@@ -124,6 +124,7 @@ interactive, in conjunction with HTML and CSS as a base for formatting.
 * W3C HTML Validator[https://validator.w3.org/]
 * W3C CSS Validator[https://jigsaw.w3.org/css-validator/]
 * Autoprefixer CSS[https://autoprefixer.github.io/]
+* PEP8 onlick chec - Results[http://pep8online.com/checkresult]
 * Am I responsive [http://ami.responsivedesign.is/] used to check compatibility with a numerous amount of devices,
 see picture below.
 ![Am I Responsive](static/images/amiresponsive.PNG)
@@ -146,12 +147,23 @@ of the other pages are slightly different throughout each breakpoint.
     - Internet Explorer
 
 ## Testing User Stories
-1. 
- 
+1. As a guest at Park Tavern I can clearly identify the wide variety of wines Park Tavern has avaiable.  
+2. As a guest at Park Tavern I can keep a review of wines and have a look back at my profile in the future.
+3. As someone who loves wines I can definately broaden my horizon and get knowledgeable on all my wines.  
+4. As a local I unfortunately at the moment can not see what others think of the wines(left to implemnet!)
+5. As a business owner i certaintly can show of my variety of wines
+6. As a business owner my site is fitting towards my vision and the wines images are beautful
+7. Asa staff member I find this a very useful tool in order to keep my notes online and learn about the wines
+that I am serving.
+8. A a staff member I now have a tool where I can go and check my notes and learn the wines, 
+where it is kept up to date and the information is awesome. 
+
+
 ## Issues while Testing
 *  Only issues that came back from HTML and CSS was that I had forgotten alt attributes for 
 my images, now sorted.
-* 
+* When checking my python code I had one continuation with line error which is now fixed. 
+* User Story 4- however this will be implented at a later stage. 
 
 ## Deployment
 For my website I used Heroku to deploy my site, See below steps followed to deploy.
