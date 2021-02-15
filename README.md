@@ -55,7 +55,7 @@ I have chosen the color scheme that fits with the current website design of Park
 fluidity of the site. The colors are neutral and easy on the eye. See the image below for the colors 
 used throughout my site. 
 
-![Color Scheme](static/images/Colours.PNG)
+![Color Scheme](static/images/Colors.png)
 
 ### Typogrophy
 When looking at the typrogrophy of the website I would have liked to explore a few different options but
@@ -126,7 +126,7 @@ interactive, in conjunction with HTML and CSS as a base for formatting.
 * Autoprefixer CSS[https://autoprefixer.github.io/]
 * Am I responsive [http://ami.responsivedesign.is/] used to check compatibility with a numerous amount of devices,
 see picture below.
-![Am I Responsive](assets/images/amiresponsive.PNG)
+![Am I Responsive](static/images/amiresponsive.PNG)
 * I consistantly was using chrome web developer tools, however when push to my mobile found these to not be the most
 accurate. The design was though out to ensure smaller screens were not squished and legible throughout. The layout 
 of the other pages are slightly different throughout each breakpoint.
